@@ -1,0 +1,10 @@
+!!! 5
+html
+	body
+		h2 Hello world
+
+		- data.forEach(function(gist){
+			li
+				a(href='/' + gist.id)= gist.id
+				em= gist.description
+		- })
