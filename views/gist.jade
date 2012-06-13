@@ -1,0 +1,15 @@
+h2= title
+p
+	p
+		em= data.description 
+		time= data.date 
+	- if(data.fork)
+		small
+			p Fork from <a href=/gists/#{data.fork.login}> #{data.fork.login} </a>
+	- files.forEach(function(file){
+		p
+			em
+				a(href=file.raw_url)= file.filename
+			pre
+				code= file.content
+	- })

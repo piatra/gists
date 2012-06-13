@@ -1,8 +1,10 @@
-h1= title
-p Welcome to #{title}
+h2= title
+p Below are the users gists
 - if(data.length)
 	- data.forEach(function(gist){
-		li= gist.id
+		li
+			a(href='/' + user + '/gist/' + gist.id)= gist.id
+			span= gist.description
 	- })
 - else
 	p No gists :(
